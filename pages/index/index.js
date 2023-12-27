@@ -15,9 +15,7 @@ Component({
   methods: {
     // 事件处理函数
     bindViewTap() {
-      wx.navigateTo({
-        url: '../logs/logs'
-      })
+      console.log('bindViewTag')
     },
     onChooseAvatar(e) {
       const { avatarUrl } = e.detail

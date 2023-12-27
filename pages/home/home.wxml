@@ -1,0 +1,3 @@
+<view>
+  <input type="text" value="{{text}}"/>
+</view>
