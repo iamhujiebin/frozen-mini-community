@@ -1,0 +1,7 @@
+{
+  "desc": "结冰社区服务",
+  "rules": [{
+  "action": "allow",
+  "page": "*"
+  }]
+}
