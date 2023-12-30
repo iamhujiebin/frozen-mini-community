@@ -1,0 +1,9 @@
+<view class="mine">
+  <view class="userinfo">
+    <t-avatar class="userinfo__avatar" image="{{userInfo.avatar || defaultAvatarUrl}}" bindtap="onChooseAvatar" />
+    <view class="userinfo__name">{{userInfo.nick}}</view>
+    <!-- <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"> -->
+    <!-- <image class="avatar" src="{{userInfo.avatarUrl}}"></image> -->
+    <!-- </button> -->
+  </view>
+</view>

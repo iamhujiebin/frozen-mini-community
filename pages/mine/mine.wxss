@@ -1,0 +1,35 @@
+.mine {
+  position: fixed;
+  width: 100%;
+  height: 480rpx;
+  background-image: url('https://cdn-we-retail.ym.tencent.com/miniapp/template/user-center-bg-v1.png');
+  background-repeat: no-repeat;
+  padding: 0 24rpx;
+}
+
+.userinfo {
+  margin-top: 192rpx;
+  margin-bottom: 48rpx;
+  height: 96rpx;
+  line-height: 48rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #333;
+  position: relative;
+}
+
+.userinfo__avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  overflow: hidden;
+}
+
+.userinfo__name {
+  font-size: 36rpx;
+  line-height: 48rpx;
+  color: #333;
+  font-weight: bold;
+  margin-left: 20rpx;
+}

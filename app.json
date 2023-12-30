@@ -1,8 +1,9 @@
 {
-  "entryPagePath": "pages/home/home",
+  "entryPagePath": "pages/mine/mine",
   "pages": [
     "pages/index/index",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/mine/mine"
   ],
   "tabBar": {
     "color": "#666666",
@@ -15,8 +16,12 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/mine/mine",
         "text": "我的"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "test"
       }
     ]
   },
