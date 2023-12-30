@@ -20,10 +20,15 @@
 }
 
 .userinfo__avatar {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 48rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
   overflow: hidden;
+}
+
+button {
+  /* button padding为0才能在图片中嵌套图片 */
+  padding: 0; 
 }
 
 .userinfo__name {

@@ -1,9 +1,17 @@
 <view class="mine">
   <view class="userinfo">
-    <t-avatar class="userinfo__avatar" image="{{userInfo.avatar || defaultAvatarUrl}}" bindtap="onChooseAvatar" />
-    <view class="userinfo__name">{{userInfo.nick}}</view>
-    <!-- <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"> -->
-    <!-- <image class="avatar" src="{{userInfo.avatarUrl}}"></image> -->
-    <!-- </button> -->
+    <view class="userinfo__avatar">
+      <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="userinfo__avatar" src="{{userInfo.avatar || defaultAvatarUrl}}"></image>
+      </button>
+    </view>
+    <input type="nickname" class="userinfo__name" value="{{userInfo.nick || defaultNick}}" bind:change="onInputChange" />
+    <!-- <image src="{{defaultAvatarUrl}}"></image> -->
+  </view>
+  <view class="helper">
+    <t-cell-group theme="card">
+      <t-cell title="联系客服" leftIcon="service" hover arrow />
+      <t-cell title="帮助中心" leftIcon="crooked-smile" hover arrow />
+    </t-cell-group>
   </view>
 </view>
