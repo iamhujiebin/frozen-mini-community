@@ -108,8 +108,9 @@ Page({
     query
       .selectAll('.title')
       .boundingClientRect((rects) => {
-        this.offsetTopList = rects.map((item) => item.top);
-        this.setData({ scrollTop: rects[sideBarIndex].top });
+        const swiperDiff = 196 // 因为增加了sidebar,所以需要扣除掉, 196 是debug出来的,
+        this.offsetTopList = rects.map((item) => item.top - swiperDiff); // 
+        this.setData({ scrollTop: rects[sideBarIndex].top - swiperDiff });
       })
       .exec();
   },
