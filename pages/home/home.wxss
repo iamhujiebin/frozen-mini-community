@@ -7,7 +7,6 @@ page .round-image {
 }
 
 .side-bar-wrapper {
-  margin-top: 100rpx;
   display: flex;
   height: 100vh;
 }
@@ -21,6 +20,7 @@ page .round-image {
 }
 
 .side-bar-wrapper .title {
+  display: flex;
   padding-left: 40rpx;
   margin-bottom: 8rpx;
   line-height: 52rpx;
@@ -29,4 +29,9 @@ page .round-image {
 .side-bar-wrapper .image {
   width: 96rpx;
   height: 96rpx;
+}
+
+.home-swiper {
+  height: 100%;
+  margin-bottom: 8rpx;
 }

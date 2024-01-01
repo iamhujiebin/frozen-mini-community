@@ -11,6 +11,10 @@ Component({
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    imageIconList: [
+      'https://tdesign.gtimg.com/miniprogram/images/icon1.png',
+      'https://tdesign.gtimg.com/miniprogram/images/icon2.png',
+    ],
   },
   methods: {
     // 事件处理函数

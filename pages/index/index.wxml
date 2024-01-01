@@ -20,5 +20,10 @@
     <view class="usermotto">
       <text class="user-motto">{{motto}}</text>
     </view>
+    <view class="demo__list">
+      <view class="demo__card" wx:for="{{imageIconList}}" wx:key="index">
+        <t-icon name="https://tdesign.gtimg.com/miniprogram/images/icon1.png" size="24" bind:click="onIconTap" />
+      </view>
+    </view>
   </view>
 </scroll-view>
