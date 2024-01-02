@@ -10,6 +10,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    domain:"http://192.168.1.246:7100"
+    domain:"http://192.168.35.1:7100"
   }
 })
