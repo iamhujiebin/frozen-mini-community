@@ -17,36 +17,6 @@ Page({
     // 事件处理函数
     onLoad() {
         console.log('onLoad')
-        wx.login({
-            success(res) {
-                if (res.code) {
-                    console.log("res:" + JSON.stringify(res))
-                    wx.request({
-                        url: app.globalData.domain + '/v1.0/auth/code',
-                        method: 'POST',
-                        data: {
-                            code: res.code,
-                        },
-                        success: function (res) {
-                            console.log('http success:' + JSON.stringify(res))
-                            if (res.data?.data) {
-                                app.globalData.userInfo = {
-                                    id: res.data.data.id,
-                                    avatar: res.data.data.avatar,
-                                    nick: res.data.data.nick
-                                }
-                                console.log('globalInfo', app.globalData.userInfo)
-                            }
-                        },
-                        fail: function (e) {
-                            console.log('http fail:', e)
-                        }
-                    })
-                } else {
-                    console.log("登录失败")
-                }
-            }
-        })
     },
     onChooseAvatar(e) {
         const {avatarUrl} = e.detail

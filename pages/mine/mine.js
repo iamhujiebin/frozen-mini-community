@@ -11,6 +11,44 @@ Page({
             'https://cdn-we-retail.ym.tencent.com/miniapp/usercenter/icon-user-center-avatar@2x.png',
         defaultNick: "微信用户"
     },
+    // 事件处理函数
+    onLoad() {
+        console.log('onLoad')
+        var that = this
+        wx.login({
+            success(res) {
+                if (res.code) {
+                    wx.request({
+                        url: app.globalData.domain + '/v1.0/auth/code',
+                        method: 'POST',
+                        data: {
+                            code: res.code,
+                        },
+                        success: function (res) {
+                            console.log('http success:' + JSON.stringify(res))
+                            if (res.data?.data) {
+                                app.globalData.userInfo = {
+                                    id: res.data.data.id,
+                                    avatar: res.data.data.avatar,
+                                    nick: res.data.data.nick
+                                }
+                                console.log('globalInfo', app.globalData.userInfo)
+                                that.setData({
+                                    "userInfo.avatar": app.globalData.userInfo.avatar,
+                                    "userInfo.nick": app.globalData.userInfo.nick,
+                                })
+                            }
+                        },
+                        fail: function (e) {
+                            console.log('http fail:', e)
+                        }
+                    })
+                } else {
+                    console.log("登录失败")
+                }
+            }
+        })
+    },
     onShow() {
         console.log("onShow")
         this.setData({
