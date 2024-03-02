@@ -34,7 +34,7 @@ Page({
         var that = this
         // 获取banner
         wx.request({
-            url: app.globalData.domain + '/v1.0/banners', // only in 真机调试
+            url: app.globalData.domain + '/v1.0/banners',
             method: 'GET',
             success: function (res) {
                 let pics = []
