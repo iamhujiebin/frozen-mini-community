@@ -83,7 +83,6 @@ Page({
                         .boundingClientRect((rects) => {
                             const swiperDiff = 196 // 因为增加了sidebar,所以需要扣除掉, 196 是debug出来的,
                             this.offsetTopList = rects.map((item) => item.top - swiperDiff); // 
-                            console.log('top:', this.offsetTopList)
                             this.setData({
                                 scrollTop: rects[sideBarIndex].top - swiperDiff
                             });
