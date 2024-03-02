@@ -1,29 +1,32 @@
 <!--index.wxml-->
 <navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+    <view class="container">
+        <view class="userinfo">
+            <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
+                <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+                </button>
+                <view class="nickname-wrapper">
+                    <text class="nickname-label">昵称</text>
+                    <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange"/>
+                </view>
+            </block>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
         </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+        <view class="usermotto">
+            <text class="user-motto">{{motto}}</text>
+        </view>
+        <view>
+            测试一下啊
+        </view>
+        <view class="demo__list">
+            <view class="demo__card" wx:for="{{imageIconList}}" wx:key="index">
+                <t-icon name="https://tdesign.gtimg.com/miniprogram/images/icon1.png" size="24" bind:click="onIconTap"/>
+            </view>
+        </view>
     </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view>
-    <view class="demo__list">
-      <view class="demo__card" wx:for="{{imageIconList}}" wx:key="index">
-        <t-icon name="https://tdesign.gtimg.com/miniprogram/images/icon1.png" size="24" bind:click="onIconTap" />
-      </view>
-    </view>
-  </view>
 </scroll-view>
