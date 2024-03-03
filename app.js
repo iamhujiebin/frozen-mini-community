@@ -10,7 +10,7 @@ App({
     },
     globalData: {
         userInfo: {},
-        // domain: "https://api.frozenhu.cn:8080"
-        domain: "http://127.0.0.1:7100"
+        domain: "https://api.frozenhu.cn:8080"
+        // domain: "http://127.0.0.1:7100"
     }
 })

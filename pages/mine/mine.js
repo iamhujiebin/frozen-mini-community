@@ -16,6 +16,9 @@ Page({
         console.log('onLoad')
         var that = this
         wx.login({
+            fail(e) {
+                console.log(" wxlogin fail")
+            },
             success(res) {
                 if (res.code) {
                     wx.request({
@@ -90,7 +93,7 @@ Page({
             },
             success: function (res) {
                 that.setData({
-                    "userInfo.nick":nick
+                    "userInfo.nick": nick
                 })
             },
             fail: function (e) {
