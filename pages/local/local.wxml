@@ -1,2 +1,18 @@
-<!--pages/local/local.wxml-->
-<text>pages/local/local.wxml</text>
+<!--轮播图-->
+<swiper indicator-dots circular>
+    <swiper-item wx:for="{{swiperList}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix"></image>
+    </swiper-item>
+</swiper>
+        <!--九宫格-->
+<view class="grid-list">
+    <view class="grid-item" wx:for="{{categories}}" wx:key="id">
+        <image src="{{item.icon}}"></image>
+        <text>{{item.title}}</text>
+    </view>
+</view>
+
+        <!--广告位置-->
+<view class="img-box">
+    <image wx:for="{{ads}}" src="{{item}}"></image>
+</view>
