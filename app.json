@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/home/home",
     "pages/mine/mine",
-    "pages/local/local"
+	"pages/local/local",
+	"pages/shop/shop"
   ],
   "tabBar": {
     "color": "#666666",

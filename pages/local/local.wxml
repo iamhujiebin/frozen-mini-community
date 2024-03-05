@@ -6,10 +6,10 @@
 </swiper>
         <!--九宫格-->
 <view class="grid-list">
-    <view class="grid-item" wx:for="{{categories}}" wx:key="id">
+    <navigator class="grid-item" wx:for="{{categories}}" wx:key="id" url="/pages/shop/shop?id={{item.id}}&title={{item.title}}">
         <image src="{{item.icon}}"></image>
         <text>{{item.title}}</text>
-    </view>
+    </navigator>
 </view>
 
         <!--广告位置-->
