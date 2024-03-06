@@ -10,6 +10,7 @@ Page({
         page: 1,
         pageSize: 10,
         total: 0,
+        isLoading: false // 节流阀,下拉触底比网络请求快多了导致的
     },
 
     /**
@@ -23,6 +24,12 @@ Page({
     },
 
     getShopList() {
+        this.setData({
+            isLoading: true
+        })
+        wx.showLoading({
+            title: '数据加载中...',
+        })
         wx.request({
             url: `https://applet-base-api-t.itheima.net/categories/${this.data.query.id}/shops`,
             method: "GET",
@@ -39,6 +46,12 @@ Page({
             },
             fail: e => {
                 console.error(e)
+            },
+            complete: () => {
+                wx.hideLoading()
+                this.setData({
+                    isLoading: false
+                })
             }
         })
     },
@@ -82,7 +95,11 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        if (this.data.isLoading) return
+        this.setData({
+            page: this.data.page + 1
+        })
+        this.getShopList()
     },
 
     /**
