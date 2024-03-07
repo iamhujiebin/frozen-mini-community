@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/local/local",
+          "pathName": "pages/local/local",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/shop/shop",
           "pathName": "pages/shop/shop",
           "query": "id=1&title=美食",
